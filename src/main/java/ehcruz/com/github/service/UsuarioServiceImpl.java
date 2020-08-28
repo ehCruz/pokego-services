@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional(readOnly = true)
+@Transactional()
 public class UsuarioServiceImpl implements UsuarioService {
 
     private UsuarioDao usuarioDao;
@@ -17,23 +17,25 @@ public class UsuarioServiceImpl implements UsuarioService {
         this.usuarioDao = usuarioDao;
     }
 
-    @Transactional(readOnly = false)
     @Override
     public Usuario cadastrarNovo(Usuario usuario) {
         this.usuarioDao.save(usuario);
         return usuario;
     }
 
+    @Transactional(readOnly = true)
     @Override
     public Usuario getUsuarioPorId(Long id) {
         return this.usuarioDao.findById(id);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public Usuario getUsuarioPorEmail(String email) {
         return this.usuarioDao.findByEmail(email);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public Usuario getUsuarioPorCpf(String cpf) {
         return this.usuarioDao.findByCpf(cpf);
@@ -41,10 +43,10 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public Usuario atualizarUsuario(Usuario usuario) {
-        return null;
+        this.usuarioDao.update(usuario);
+        return usuario;
     }
 
-    @Transactional(readOnly = false)
     @Override
     public void removerUsuario(Long id) {
         this.usuarioDao.delete(id);

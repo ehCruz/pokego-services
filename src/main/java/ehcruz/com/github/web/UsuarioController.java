@@ -14,7 +14,7 @@ import java.util.Map;
 @RequestMapping(value = "usuario")
 public class UsuarioController extends ApplicationController {
 
-    private UsuarioService usuarioService;
+    private final UsuarioService usuarioService;
 
     @Autowired
     public UsuarioController(UsuarioService usuarioService) {
@@ -27,21 +27,27 @@ public class UsuarioController extends ApplicationController {
         return ResponseEntity.ok(u);
     }
 
-    @GetMapping(value = "/by/id/{id}")
+    @GetMapping(value = "by/id/{id}")
     public ResponseEntity<Usuario> getUsuarioUsuarioById(@PathVariable("id") Long id) {
         Usuario u = this.usuarioService.getUsuarioPorId(id);
         return ResponseEntity.ok(u);
     }
 
-    @GetMapping(value = "/by/email/{email}")
+    @GetMapping(value = "by/email/{email}")
     public ResponseEntity<Usuario> getUsuarioUsuarioByEmail(@PathVariable("email") String email) {
         Usuario u = this.usuarioService.getUsuarioPorEmail(email);
         return ResponseEntity.ok(u);
     }
 
-    @GetMapping(value = "/by/cpf/{cpf}")
+    @GetMapping(value = "by/cpf/{cpf}")
     public ResponseEntity<Usuario> getUsuarioUsuarioByCpf(@PathVariable("cpf") String cpf) {
         Usuario u = this.usuarioService.getUsuarioPorCpf(cpf);
+        return ResponseEntity.ok(u);
+    }
+
+    @PutMapping(value = "atualizar")
+    public ResponseEntity<Usuario> atualizarDadosUsuario(@Valid @RequestBody Usuario usuario) {
+        Usuario u = this.usuarioService.atualizarUsuario(usuario);
         return ResponseEntity.ok(u);
     }
 
