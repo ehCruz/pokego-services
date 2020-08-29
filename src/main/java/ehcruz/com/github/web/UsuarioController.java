@@ -1,6 +1,7 @@
 package ehcruz.com.github.web;
 
 import ehcruz.com.github.domain.Usuario;
+import ehcruz.com.github.dto.PokemonUsuario;
 import ehcruz.com.github.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class UsuarioController extends ApplicationController {
     }
 
     @PostMapping(value = "cadastrar")
-    public ResponseEntity<Usuario> cadastraUsuario(@Valid @RequestBody Usuario usuario) {
+    public ResponseEntity<Usuario> cadastrarUsuario(@Valid @RequestBody Usuario usuario) {
         Usuario u = this.usuarioService.cadastrarNovo(usuario);
         return ResponseEntity.ok(u);
     }
@@ -49,6 +50,20 @@ public class UsuarioController extends ApplicationController {
     public ResponseEntity<Usuario> atualizarDadosUsuario(@Valid @RequestBody Usuario usuario) {
         Usuario u = this.usuarioService.atualizarUsuario(usuario);
         return ResponseEntity.ok(u);
+    }
+
+    @PutMapping(value = "capturar/pokemon")
+    public ResponseEntity<Usuario> adicionarPokemonUsuario(@RequestBody PokemonUsuario pokemonUsuario) {
+        Usuario usuario = this.usuarioService
+                .adicionarNovoPokemon(pokemonUsuario.idUsuario, pokemonUsuario.idPokemon);
+        return ResponseEntity.ok(usuario);
+    }
+
+    @DeleteMapping(value = "remover/pokemon")
+    public ResponseEntity<Usuario> removerPokemonUsuario(@RequestBody PokemonUsuario pokemonUsuario) {
+        Usuario usuario = this.usuarioService
+                .removerPokemon(pokemonUsuario.idUsuario, pokemonUsuario.idPokemon);
+        return ResponseEntity.ok(usuario);
     }
 
     @DeleteMapping(value = "remover/{id}")

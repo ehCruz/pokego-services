@@ -1,10 +1,13 @@
 package ehcruz.com.github.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 @Entity
-@Table(name = "TB_POKEMON")
+@Table(name = "TB_POKEMON",
+        uniqueConstraints = @UniqueConstraint(columnNames = "id_api_pokemon"))
 public class Pokemon {
 
     @Id
@@ -13,12 +16,15 @@ public class Pokemon {
     private Long id;
 
     @Column(name = "id_api_pokemon")
+    @NotNull(message = "{pokemon.notblank}")
     private Long idApi;
 
     @Column(name = "name_pokemon")
+    @NotBlank(message = "{pokemon.notblank}")
     private String name;
 
     @Column(name = "image_url_pokemon")
+    @NotBlank(message = "{pokemon.notblank}")
     private String imgUrl;
 
     public Long getId() {

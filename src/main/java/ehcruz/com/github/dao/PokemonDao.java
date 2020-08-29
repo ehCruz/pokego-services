@@ -1,8 +1,14 @@
 package ehcruz.com.github.dao;
 
 import ehcruz.com.github.domain.Pokemon;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public class PokemonDao extends AbstractDao<Pokemon, Long> {
+import java.util.List;
+
+public interface PokemonDao {
+
+    void save(Pokemon usuario);
+
+    Pokemon findById(Long id);
+
+    List<Pokemon> findAll();
 }

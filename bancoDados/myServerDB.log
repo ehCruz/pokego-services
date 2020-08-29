@@ -2,3 +2,201 @@
 DELETE FROM TB_USUARIO WHERE ID_USUARIO=1
 INSERT INTO TB_USUARIO VALUES(1,'096.118.489-27','2020-08-28 15:38:49.612000','cruzeduardohenrique@gmail.com','Eduardo Cruz','(41) 99999-3655')
 COMMIT
+DISCONNECT
+/*C6*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C7*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C8*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C9*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C10*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C11*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C12*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C13*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C14*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C15*/SET SCHEMA PUBLIC
+alter table tb_pokemon add constraint UKs0ig0ctvc50p616y1jvu16ub7 unique (id_api_pokemon)
+alter table tb_usuario add constraint UK9gkhcu0xumq2x3qio84h8hg38 unique (cpf_usuario, email_usuario)
+DISCONNECT
+/*C16*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C17*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C18*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C19*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C20*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C21*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C22*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C23*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C24*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C25*/SET SCHEMA PUBLIC
+alter table tb_pokemon drop constraint UKs0ig0ctvc50p616y1jvu16ub7
+alter table tb_pokemon add constraint UKs0ig0ctvc50p616y1jvu16ub7 unique (id_api_pokemon)
+alter table tb_usuario drop constraint UK9gkhcu0xumq2x3qio84h8hg38
+alter table tb_usuario add constraint UK9gkhcu0xumq2x3qio84h8hg38 unique (cpf_usuario, email_usuario)
+DISCONNECT
+/*C26*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C27*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C28*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C29*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C30*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C31*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C32*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C33*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C34*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C35*/SET SCHEMA PUBLIC
+alter table tb_pokemon drop constraint UKs0ig0ctvc50p616y1jvu16ub7
+alter table tb_pokemon add constraint UKs0ig0ctvc50p616y1jvu16ub7 unique (id_api_pokemon)
+alter table tb_usuario drop constraint UK9gkhcu0xumq2x3qio84h8hg38
+alter table tb_usuario add constraint UK9gkhcu0xumq2x3qio84h8hg38 unique (cpf_usuario, email_usuario)
+INSERT INTO TB_POKEMON VALUES(1,132,'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png','ditto')
+COMMIT
+DISCONNECT
+/*C36*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C37*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C38*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C39*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C40*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C41*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C42*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C43*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C44*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C45*/SET SCHEMA PUBLIC
+alter table tb_pokemon drop constraint UKs0ig0ctvc50p616y1jvu16ub7
+alter table tb_pokemon add constraint UKs0ig0ctvc50p616y1jvu16ub7 unique (id_api_pokemon)
+alter table tb_usuario drop constraint UK9gkhcu0xumq2x3qio84h8hg38
+alter table tb_usuario add constraint UK9gkhcu0xumq2x3qio84h8hg38 unique (cpf_usuario, email_usuario)
+DISCONNECT
+/*C46*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C47*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C48*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C49*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C50*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C51*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C52*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C53*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C54*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C55*/SET SCHEMA PUBLIC
+alter table tb_pokemon drop constraint UKs0ig0ctvc50p616y1jvu16ub7
+alter table tb_pokemon add constraint UKs0ig0ctvc50p616y1jvu16ub7 unique (id_api_pokemon)
+alter table tb_usuario drop constraint UK9gkhcu0xumq2x3qio84h8hg38
+alter table tb_usuario add constraint UK9gkhcu0xumq2x3qio84h8hg38 unique (cpf_usuario, email_usuario)
+DISCONNECT
+/*C56*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C57*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C58*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C59*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C60*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C61*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C62*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C63*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C64*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C65*/SET SCHEMA PUBLIC
+alter table tb_pokemon drop constraint UKs0ig0ctvc50p616y1jvu16ub7
+alter table tb_pokemon add constraint UKs0ig0ctvc50p616y1jvu16ub7 unique (id_api_pokemon)
+alter table tb_usuario drop constraint UK9gkhcu0xumq2x3qio84h8hg38
+alter table tb_usuario add constraint UK9gkhcu0xumq2x3qio84h8hg38 unique (cpf_usuario, email_usuario)
+INSERT INTO TB_USUARIO_HAS_POKEMON VALUES(1,1)
+COMMIT
+DISCONNECT
+/*C66*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C67*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C68*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C69*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C71*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C70*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C72*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C73*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C74*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C75*/SET SCHEMA PUBLIC
+alter table tb_pokemon drop constraint UKs0ig0ctvc50p616y1jvu16ub7
+alter table tb_pokemon add constraint UKs0ig0ctvc50p616y1jvu16ub7 unique (id_api_pokemon)
+alter table tb_usuario drop constraint UK9gkhcu0xumq2x3qio84h8hg38
+alter table tb_usuario add constraint UK9gkhcu0xumq2x3qio84h8hg38 unique (cpf_usuario, email_usuario)
+DISCONNECT
+/*C76*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C77*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C78*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C79*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C80*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C81*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C82*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C83*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C84*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C85*/SET SCHEMA PUBLIC
+alter table tb_pokemon drop constraint UKs0ig0ctvc50p616y1jvu16ub7
+alter table tb_pokemon add constraint UKs0ig0ctvc50p616y1jvu16ub7 unique (id_api_pokemon)
+alter table tb_usuario drop constraint UK9gkhcu0xumq2x3qio84h8hg38
+alter table tb_usuario add constraint UK9gkhcu0xumq2x3qio84h8hg38 unique (cpf_usuario, email_usuario)
+DELETE FROM TB_USUARIO_HAS_POKEMON WHERE FK_ID_USUARIO=1 AND FK_ID_POKEMON=1
+COMMIT
+INSERT INTO TB_USUARIO_HAS_POKEMON VALUES(1,1)
+COMMIT

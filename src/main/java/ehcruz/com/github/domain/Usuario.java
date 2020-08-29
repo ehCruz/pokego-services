@@ -13,7 +13,8 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "TB_USUARIO")
+@Table(name = "TB_USUARIO",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"cpf_usuario", "email_usuario"}))
 public class Usuario {
 
     @Id
@@ -33,7 +34,7 @@ public class Usuario {
 
     @Column(name = "telefone_usuario")
     @NotBlank(message = "{validacao.notblank}")
-    @Pattern(regexp = "^\\([1-9]{2}\\) (?:[2-8]|9[1-9])[0-9]{3}\\-[0-9]{4}$", message = "{telefone.invalido}")
+    @Pattern(regexp = "^\\([1-9]{2}\\) (?:[2-8]|9[1-9])[0-9]{3}-[0-9]{4}$", message = "{telefone.invalido}")
     private String telefone;
 
     @Column(name = "email_usuario")
@@ -104,6 +105,18 @@ public class Usuario {
 
     public void setPokemons(List<Pokemon> pokemons) {
         this.pokemons = pokemons;
+    }
+
+    public void adicionarNovoPokemon(Pokemon pokemon) {
+        if (pokemon != null) {
+            this.pokemons.add(pokemon);
+        }
+    }
+
+    public void removerPokemon(Pokemon pokemon) {
+        if (pokemon != null && !this.pokemons.isEmpty()) {
+            this.pokemons.remove(pokemon);
+        }
     }
 
     @Override

@@ -1,6 +1,7 @@
 package ehcruz.com.github.service;
 
 import ehcruz.com.github.dao.UsuarioDao;
+import ehcruz.com.github.domain.Pokemon;
 import ehcruz.com.github.domain.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,11 +11,13 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional()
 public class UsuarioServiceImpl implements UsuarioService {
 
-    private UsuarioDao usuarioDao;
+    private final UsuarioDao usuarioDao;
+    private final PokemonService pokemonService;
 
     @Autowired
-    public UsuarioServiceImpl(UsuarioDao usuarioDao) {
+    public UsuarioServiceImpl(UsuarioDao usuarioDao, PokemonService pokemonService) {
         this.usuarioDao = usuarioDao;
+        this.pokemonService = pokemonService;
     }
 
     @Override
@@ -50,5 +53,23 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public void removerUsuario(Long id) {
         this.usuarioDao.delete(id);
+    }
+
+    @Override
+    public Usuario adicionarNovoPokemon(Long idUsuario, Long idPokemon) {
+        Usuario usuario = this.usuarioDao.findById(idUsuario);
+        Pokemon pokemon = this.pokemonService.getPokemonPorId(idPokemon);
+        usuario.adicionarNovoPokemon(pokemon);
+        this.usuarioDao.update(usuario);
+        return usuario;
+    }
+
+    @Override
+    public Usuario removerPokemon(Long idUsuario, Long idPokemon) {
+        Usuario usuario = this.usuarioDao.findById(idUsuario);
+        Pokemon pokemon = this.pokemonService.getPokemonPorId(idPokemon);
+        usuario.removerPokemon(pokemon);
+        this.usuarioDao.update(usuario);
+        return usuario;
     }
 }

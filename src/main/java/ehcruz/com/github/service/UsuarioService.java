@@ -15,4 +15,9 @@ public interface UsuarioService {
     Usuario atualizarUsuario(Usuario usuario);
 
     void removerUsuario(Long id);
+
+    Usuario adicionarNovoPokemon(Long idUsuario, Long idPokemon);
+
+    Usuario removerPokemon(Long idUsuario, Long idPokemon);
+
 }
