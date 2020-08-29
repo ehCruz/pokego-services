@@ -20,4 +20,5 @@ public interface UsuarioService {
 
     Usuario removerPokemon(Long idUsuario, Long idPokemon);
 
+    Usuario getUsuarioLogin(String email, String cpf);
 }

@@ -19,4 +19,6 @@ public interface UsuarioDao {
     Usuario findByEmail(String email);
 
     Usuario findByCpf(String cpf);
+
+    Usuario findByEmailAndCpf(String email, String cpf);
 }

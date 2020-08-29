@@ -72,4 +72,9 @@ public class UsuarioServiceImpl implements UsuarioService {
         this.usuarioDao.update(usuario);
         return usuario;
     }
+
+    @Override
+    public Usuario getUsuarioLogin(String email, String cpf) {
+        return this.usuarioDao.findByEmailAndCpf(email, cpf);
+    }
 }
