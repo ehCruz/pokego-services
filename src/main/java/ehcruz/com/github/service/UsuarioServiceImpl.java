@@ -3,9 +3,13 @@ package ehcruz.com.github.service;
 import ehcruz.com.github.dao.UsuarioDao;
 import ehcruz.com.github.domain.Pokemon;
 import ehcruz.com.github.domain.Usuario;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Transactional()
@@ -76,5 +80,14 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public Usuario getUsuarioLogin(String email, String cpf) {
         return this.usuarioDao.findByEmailAndCpf(email, cpf);
+    }
+
+    @Override
+    public List<Pokemon> pesquisaColecao(Long idUsuario, String termoPesquisa) {
+        List<Pokemon> listaResultado = new ArrayList<>();
+        if ((idUsuario != null && idUsuario >= 0) && StringUtils.isNotBlank(termoPesquisa)) {
+            listaResultado = this.usuarioDao.searchPokemonByTerm(idUsuario, termoPesquisa);
+        }
+        return listaResultado;
     }
 }

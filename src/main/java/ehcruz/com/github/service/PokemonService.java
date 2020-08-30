@@ -7,4 +7,6 @@ public interface PokemonService {
     Pokemon cadastrar(Pokemon pokemon);
 
     Pokemon getPokemonPorId(Long id);
+
+    Pokemon getPokemonPorIdApi(Long id);
 }

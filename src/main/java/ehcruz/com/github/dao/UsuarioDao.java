@@ -1,5 +1,6 @@
 package ehcruz.com.github.dao;
 
+import ehcruz.com.github.domain.Pokemon;
 import ehcruz.com.github.domain.Usuario;
 
 import java.util.List;
@@ -21,4 +22,6 @@ public interface UsuarioDao {
     Usuario findByCpf(String cpf);
 
     Usuario findByEmailAndCpf(String email, String cpf);
+
+    List<Pokemon> searchPokemonByTerm(Long id, String term);
 }

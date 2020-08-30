@@ -10,5 +10,7 @@ public interface PokemonDao {
 
     Pokemon findById(Long id);
 
+    Pokemon findByIdApi(Long id);
+
     List<Pokemon> findAll();
 }

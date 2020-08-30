@@ -1,5 +1,6 @@
 package ehcruz.com.github.web;
 
+import ehcruz.com.github.domain.Pokemon;
 import ehcruz.com.github.domain.Usuario;
 import ehcruz.com.github.dto.PokemonUsuario;
 import ehcruz.com.github.service.UsuarioService;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -20,6 +22,13 @@ public class UsuarioController extends ApplicationController {
     @Autowired
     public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
+    }
+
+    @PostMapping(value = "validar")
+    public ResponseEntity<Map<String, Boolean>> validarDadosUsuario(@Valid @RequestBody Usuario usuario) {
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("valido", true);
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping(value = "cadastrar")
@@ -72,5 +81,20 @@ public class UsuarioController extends ApplicationController {
         Map<String, Boolean> response = new HashMap<>();
         response.put("removido", true);
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping(value = "colecao/{id}")
+    public ResponseEntity<Map<String, List<Pokemon>>> getColecaoUsuario(@PathVariable("id") Long idUsuario) {
+        Usuario usuario = this.usuarioService.getUsuarioPorId(idUsuario);
+        Map<String, List<Pokemon>> response = new HashMap<>();
+        response.put("pokemons", usuario.getPokemons());
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping(value = "pesquisar/pokemon")
+    public ResponseEntity<List<Pokemon>> getPesquisaNaColecao(@RequestParam("uId") Long idUsuario,
+                                                              @RequestParam("termo") String termoPesquisa) {
+        List<Pokemon> pokemon = this.usuarioService.pesquisaColecao(idUsuario, termoPesquisa);
+        return ResponseEntity.ok(pokemon);
     }
 }

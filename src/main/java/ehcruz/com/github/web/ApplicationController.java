@@ -20,6 +20,7 @@ public abstract class ApplicationController {
         ex.getBindingResult().getAllErrors().forEach((error) -> {
             String fieldName = ((FieldError) error).getField();
             String errorMessage = error.getDefaultMessage();
+            errors.put("field", fieldName);
             errors.put(fieldName, errorMessage);
         });
         return errors;
@@ -30,7 +31,7 @@ public abstract class ApplicationController {
     public Map<String, String> handleValidationExceptions(
             ConstraintViolationException ex) {
         Map<String, String> errors = new HashMap<>();
-        errors.put("error", "Atenção! Os dados já se encontram cadastrados dentro da base de dados!");
+        errors.put("error", "Os dados já se encontram cadastrados dentro da base de dados!");
         return errors;
     }
 }

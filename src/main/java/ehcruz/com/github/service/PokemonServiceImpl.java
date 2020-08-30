@@ -27,4 +27,9 @@ public class PokemonServiceImpl implements PokemonService {
     public Pokemon getPokemonPorId(Long id) {
         return this.pokemonDao.findById(id);
     }
+
+    @Override
+    public Pokemon getPokemonPorIdApi(Long id) {
+        return this.pokemonDao.findByIdApi(id);
+    }
 }
