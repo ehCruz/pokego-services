@@ -18,7 +18,7 @@ Criação de uma aplicação JAVA para a coleção de Pokemóns!
 
 Após baixar o repositório e as dependências do maven antes de rodar o servido TomCat embeded do Spring Boot, é necessário
 configurar o banco de dados HSQL(in memory).
-Se estiver usando o IntelliJ basta adicionar uma "Application" com as seguintes informações:
+Se estiver usando o IntelliJ basta adicionar uma "Application" nova com as seguintes informações:
 
 Main Class: `org.hsqldb.Server`
 
@@ -29,6 +29,8 @@ Working directory: `<path_projeto>/pokego-services/bancoDados`
 Como ilustrado a seguir:
 ![alt text](https://github.com/ehCruz/sample-1/blob/master/Screenshot%20from%202020-08-30%2015-46-55.png?raw=true)
 
+Configuração de usuário e senha já está presente no arquivo `application.properties` dentro da aplicação.
+
 Para mais informações e também como configurar o HSQL no eclipse leia [este artigo](http://mauda.com.br/?p=495).
 
 Tendo realizado a configuração do HSQL e iniciando-o, podemos startar a aplicação.
@@ -37,6 +39,6 @@ Necessário fazer o download da aplicação front end deste desafio([link](https
 
 ### Endpoints
 
-Para uma visão geral de todos os endpoint, após roda a aplicação acessão a documentação Open API, no link `<url>/SAD-Services/swagger-ui.html`.
+Para uma visão geral de todos os endpoint bastar acessar gearada através da Open API, no link `<url>/SAD-Services/swagger-ui.html`.
 
-Duvidas pode me contatar pelo meu e-mail.
+Dúvidas pode me contatar pelo meu e-mail.
