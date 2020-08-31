@@ -39,6 +39,6 @@ Necessário fazer o download da aplicação front end deste desafio([link](https
 
 ### Endpoints
 
-Para uma visão geral de todos os endpoint bastar acessar gearada através da Open API, no link `<url>/SAD-Services/swagger-ui.html`.
+Para uma visão geral de todos os endpoint bastar acessar a documentação gearada através do Open API, no link `<url>/SAD-Services/swagger-ui.html`.
 
 Dúvidas pode me contatar pelo meu e-mail.
